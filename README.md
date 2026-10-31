@@ -4,8 +4,8 @@
 
 <br/>
 
-[![License: PolyForm Noncommercial](https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-8b5cf6?style=for-the-badge)](LICENSE)
-[![Commercial use](https://img.shields.io/badge/uso%20comercial-requiere%20permiso-ef4444?style=for-the-badge)](#-licencia)
+[![License: MIT](https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge)](LICENSE)
+[![Uso comercial](https://img.shields.io/badge/uso%20comercial-permitido-8b5cf6?style=for-the-badge)](#-licencia)
 ![Django](https://img.shields.io/badge/Django-4.2-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -216,17 +216,11 @@ Los issues y pull requests son bienvenidos. Al enviar una contribución aceptas 
 
 ## 📄 Licencia
 
-Este proyecto es **código disponible (source-available)** bajo la [PolyForm Noncommercial License 1.0.0](LICENSE).
+Este proyecto es **open source** bajo la [licencia MIT](LICENSE).
 
-| ✅ Puedes | ❌ No puedes (sin permiso) |
-|-----------|---------------------------|
-| Leer, estudiar y modificar el código | Vender el software o ofrecerlo como servicio de pago |
-| Usarlo para proyectos personales, educativos y de investigación | Usarlo para operar una tienda o negocio con fines de lucro |
-| Compartir copias manteniendo la licencia y el aviso de copyright | Redistribuirlo o sublicenciarlo con fines comerciales |
+Puedes usarlo, modificarlo y distribuirlo libremente, **incluso para montar tu propia tienda y ganar dinero con ella**. Solo te pido que mantengas el aviso de copyright y la licencia en las copias del código.
 
-**¿Quieres usarlo comercialmente?** Necesitas mi permiso expreso por escrito. Contáctame a través de mi perfil: [**@Justin-Ocana**](https://github.com/Justin-Ocana).
-
-> Nota: al restringir el uso comercial, la licencia no cumple la definición de *open source* de la OSI, aunque el código es público y puedes verlo, aprenderlo y modificarlo libremente para uso no comercial.
+Si te sirve, una ⭐ al repositorio se agradece mucho.
 
 ---
 
