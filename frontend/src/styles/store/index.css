@@ -1,0 +1,396 @@
+/* ============================================
+   lightcode STORE STYLES
+   Importa todos los estilos de la tienda
+   ============================================ */
+
+@import './buttons.css';
+@import './pages.css';
+@import './shop.css';
+@import './cart.css';
+@import './checkout.css';
+@import './store-brand-loader.css';
+
+/* ============================================
+   CSS VARIABLES - Aplicadas dinámicamente
+   ============================================ */
+
+:root {
+  /* Colores - Sistema unificado */
+  --color-primary: #3B82F6;
+  --color-secondary: #22D3EE;
+  --color-background: #000000;
+  --color-text: #E5E7EB;
+  --color-cards: #0A0A0A;
+  --color-navbar: #0A0A0A;
+  --theme-background-image: none;
+
+  /* Fuentes (aplicadas por ThemeContext) */
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ============================================
+   GLOBAL STORE STYLES
+   ============================================ */
+
+.store-page {
+  background-color: var(--color-background);
+  background-image: var(--theme-background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.store-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.store-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.store-layout__sidebar {
+  flex-shrink: 0;
+}
+
+.store-layout__main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ============================================
+   PRODUCT GRID LAYOUTS
+   ============================================ */
+
+.products-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .store-layout {
+    flex-direction: column;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   PRODUCT PAGE CONTENT
+   ============================================ */
+
+.store-product__content-list {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: var(--color-cards);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.store-product__content-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.store-product__items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.store-product__item-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.store-product__item-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.store-product__item-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.store-product__item-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .store-product__content-list {
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  
+  .store-product__items-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================
+   STORE ACCOUNT - PROFILE & CONFIGURATION
+   ============================================ */
+
+.store-account__info-card {
+  background: var(--color-cards);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.store-account__info-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.store-account__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.store-account__info-details h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+.store-account__info-details p {
+  color: var(--color-text);
+  opacity: 0.7;
+  margin: 0.25rem 0;
+}
+
+.store-account__minecraft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary) !important;
+  opacity: 1 !important;
+  font-weight: 500;
+}
+
+.store-account__info-meta {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.store-account__meta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.store-account__meta-item .label {
+  color: var(--color-text);
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.store-account__meta-item .value {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Statistics Grid */
+.store-account__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.store-account__stat-card {
+  background: var(--color-cards);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.store-account__stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.store-account__stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.store-account__stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.store-account__stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.store-account__stat-label {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.store-account__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.store-account__loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.store-account__loading p {
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .store-account__info-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .store-account__avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 1.75rem;
+  }
+
+  .store-account__stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .store-account__meta-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+/* Empty Stats Message */
+.store-account__empty-stats {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--color-cards);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  margin-top: 1.5rem;
+}
+
+.store-account__empty-stats p {
+  color: var(--color-text);
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.store-account__empty-stats .store-account__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.store-account__empty-stats .store-account__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}

@@ -1,0 +1,58 @@
+/* ============================================
+   MAIN CSS - Sistema de Estilos Universal
+   Archivo principal que importa todos los módulos
+   ============================================ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ===== GLOBAL STYLES ===== */
+@import './global/variables.css';
+@import './global/reset.css';
+
+/* ===== COMPONENTS ===== */
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/forms.css';
+@import './components/alerts.css';
+@import './components/navbar.css';
+@import './components/sidebar.css';
+@import './components/footer.css';
+
+
+
+/* ===== PAGES ===== */
+@import './pages/store.css';
+
+/* ===== UTILITIES ===== */
+@import './utilities/animations.css';
+@import './utilities/helpers.css';
+
+/* ============================================
+   NOTAS DE USO:
+   
+   1. Variables: Todas las variables CSS están en global/variables.css
+      - Modifica colores, espaciado, tipografía, etc. desde un solo lugar
+   
+   2. Componentes: Cada componente tiene su propio archivo
+      - buttons.css: Sistema completo de botones
+      - cards.css: Tarjetas y product cards
+      - forms.css: Inputs, selects, checkboxes, etc.
+      - navbar.css: Barra de navegación
+      - sidebar.css: Barra lateral
+      - footer.css: Pie de página
+   
+   3. Utilidades: Clases helper y animaciones
+      - animations.css: Animaciones reutilizables
+      - helpers.css: Clases de utilidad (margin, padding, flex, etc.)
+   
+   4. Para personalizar:
+      - Edita variables.css para cambios globales
+      - Edita archivos individuales para componentes específicos
+      - Usa las clases de utilidad para ajustes rápidos
+   
+   5. Rendimiento:
+      - Los imports se procesan en build time
+      - CSS modular permite mejor tree-shaking
+      - Fácil de mantener y escalar
+   ============================================ */

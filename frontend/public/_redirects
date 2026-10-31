@@ -1,0 +1,8 @@
+# Netlify-style redirects for bot detection
+# This works better than Vercel's conditional rewrites
+
+# Redirect bots to backend meta endpoint
+/store/:slug  https://lightcode-backend.onrender.com/api/stores/meta/:slug  200  User-Agent: *bot* *crawler* *spider* *Discordbot* *Twitterbot* *facebookexternalhit* *WhatsApp* *Slackbot* *LinkedInBot* *TelegramBot*
+
+# All other requests go to SPA
+/*  /index.html  200

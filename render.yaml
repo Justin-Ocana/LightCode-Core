@@ -1,0 +1,147 @@
+# ============================================================================
+# lightcode - Render Blueprint
+# Configura automáticamente todos los servicios necesarios en Render
+# Equivalente al script start_production.ps1 pero en la nube
+# ============================================================================
+
+services:
+  # ============================================================================
+  # 1. Web Service - Daphne (Django + WebSockets)
+  # ============================================================================
+  - type: web
+    name: lightcode-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter  # Cambia a 'free' si prefieres el plan gratuito
+    region: oregon
+    branch: main
+    healthCheckPath: /api/health/
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: settings.production
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+      - key: ALLOWED_HOSTS
+        sync: false  # Configura manualmente en el dashboard
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false  # Configura manualmente en el dashboard
+      - key: DATABASE_URL
+        sync: false  # Usa tu Neon DB existente - configura manualmente
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: lightcode-redis
+          property: connectionString
+      - key: EMAIL_HOST
+        value: smtp.gmail.com
+      - key: EMAIL_PORT
+        value: 587
+      - key: EMAIL_USE_TLS
+        value: true
+      - key: EMAIL_HOST_USER
+        sync: false  # Configura manualmente
+      - key: EMAIL_HOST_PASSWORD
+        sync: false  # Configura manualmente
+      - key: DEFAULT_FROM_EMAIL
+        value: lightcode <noreply@lightcode.com>
+      - key: FRONTEND_URL
+        sync: false  # Configura manualmente
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false  # Configura manualmente
+      - key: CLOUDINARY_API_KEY
+        sync: false  # Configura manualmente
+      - key: CLOUDINARY_API_SECRET
+        sync: false  # Configura manualmente
+      - key: PAYPAL_MODE
+        value: sandbox  # Cambia a 'live' en producción
+      - key: PAYPAL_CLIENT_ID
+        sync: false  # Configura manualmente
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false  # Configura manualmente
+      - key: PAYPAL_WEBHOOK_ID
+        sync: false  # Configura manualmente
+      - key: SECURE_SSL_REDIRECT
+        value: true
+      - key: AUTH_COOKIE_SECURE
+        value: true
+
+  # ============================================================================
+  # 2. Background Worker - Celery Worker (Procesa tareas RCON)
+  # ============================================================================
+  - type: worker
+    name: lightcode-celery-worker
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerCommand: celery -A celery_app worker --loglevel=info --pool=solo --concurrency=2
+    plan: starter  # Cambia a 'free' si prefieres el plan gratuito
+    region: oregon
+    branch: main
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: settings.production
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        sync: false  # Usa el mismo que el web service
+      - key: DEBUG
+        value: false
+      - key: DATABASE_URL
+        sync: false  # Usa tu Neon DB existente - configura manualmente
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: lightcode-redis
+          property: connectionString
+      - key: EMAIL_HOST
+        value: smtp.gmail.com
+      - key: EMAIL_PORT
+        value: 587
+      - key: EMAIL_USE_TLS
+        value: true
+      - key: EMAIL_HOST_USER
+        sync: false
+      - key: EMAIL_HOST_PASSWORD
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+
+  # ============================================================================
+  # 3. Cron Job - Celery Beat (Scheduler para tareas periódicas)
+  # ============================================================================
+  - type: cron
+    name: lightcode-celery-beat
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerCommand: celery -A celery_app beat --loglevel=info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    schedule: "* * * * *"  # Cada minuto (Celery Beat maneja su propio scheduling)
+    plan: starter  # Cambia a 'free' si prefieres el plan gratuito
+    region: oregon
+    branch: main
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: settings.production
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        sync: false  # Usa el mismo que el web service
+      - key: DEBUG
+        value: false
+      - key: DATABASE_URL
+        sync: false  # Usa tu Neon DB existente - configura manualmente
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: lightcode-redis
+          property: connectionString
+

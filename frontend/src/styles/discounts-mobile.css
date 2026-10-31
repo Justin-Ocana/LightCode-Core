@@ -1,0 +1,291 @@
+/* ============================================
+   DISCOUNTS PAGE - MOBILE OPTIMIZATION
+   Optimizado para Android/iOS
+   Sobrescribe estilos inline con !important
+   ============================================ */
+
+@media (max-width: 768px) {
+
+/* ============================================
+   PAGE LAYOUT
+   ============================================ */
+
+.discounts-page,
+[style*="padding: 2rem"] {
+  padding: var(--space-4) !important;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+[style*="display: flex"][style*="justifyContent: space-between"] {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: var(--space-3) !important;
+}
+
+/* Título */
+h1[style*="fontSize: 1.6rem"] {
+  font-size: var(--text-2xl) !important;
+}
+
+/* Botones del header */
+[style*="display: flex"][style*="gap: 0.65rem"] button {
+  width: 100% !important;
+  height: 48px !important;
+  font-size: 16px !important;
+  justify-content: center !important;
+}
+
+/* ============================================
+   QUICK BAR - Creación rápida
+   ============================================ */
+
+[style*="background: var(--bg-card)"][style*="padding: 0.85rem"] {
+  padding: var(--space-3) !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+
+[style*="quickForm"] {
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+[style*="quickInput"],
+input[style*="minWidth: 140px"] {
+  width: 100% !important;
+  min-width: 100% !important;
+  height: 44px !important;
+  font-size: 16px !important;
+  padding: var(--space-3) !important;
+}
+
+button[style*="padding: 0.5rem"] {
+  width: 100% !important;
+  height: 44px !important;
+  padding: var(--space-3) !important;
+  font-size: 16px !important;
+}
+
+/* ============================================
+   FILTERS - Búsqueda y filtros
+   ============================================ */
+
+[style*="display: flex"][style*="gap: 0.75rem"][style*="marginBottom"] {
+  flex-direction: column !important;
+  gap: var(--space-2) !important;
+}
+
+[style*="searchWrap"] {
+  width: 100% !important;
+}
+
+[style*="searchWrap"] input {
+  width: 100% !important;
+  height: 44px !important;
+  font-size: 16px !important;
+}
+
+/* ============================================
+   TABLE - Ocultar y mostrar como cards
+   ============================================ */
+
+table {
+  display: none !important;
+}
+
+/* Crear estructura de cards para móvil */
+tbody {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--space-3) !important;
+}
+
+tr {
+  display: flex !important;
+  flex-direction: column !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: var(--space-4) !important;
+  gap: var(--space-3) !important;
+}
+
+thead {
+  display: none !important;
+}
+
+td {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+td::before {
+  content: attr(data-label) !important;
+  font-weight: 600 !important;
+  color: var(--text-secondary) !important;
+  font-size: var(--text-sm) !important;
+}
+
+/* Botones de acciones en tabla */
+td button {
+  min-height: 40px !important;
+  padding: var(--space-2) var(--space-3) !important;
+}
+
+/* ============================================
+   MODAL - Desde abajo con scroll
+   ============================================ */
+
+/* Overlay del modal */
+div[style*="position: fixed"][style*="inset: 0"][style*="zIndex: 9999"] {
+  align-items: flex-end !important;
+  padding: 0 !important;
+}
+
+/* Contenedor del modal */
+div[style*="maxWidth: 600px"][style*="background: var(--bg-darker)"],
+div[style*="max-width: 600px"][style*="background: var(--bg-darker)"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  border-radius: 18px 18px 0 0 !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  margin: 0 !important;
+}
+
+/* Modal header */
+div[style*="borderBottom: 1px solid"][style*="padding: 1.25rem"] {
+  padding: var(--space-4) !important;
+  position: sticky !important;
+  top: 0 !important;
+  background: var(--bg-darker) !important;
+  z-index: 10 !important;
+}
+
+div[style*="borderBottom: 1px solid"] h2 {
+  font-size: var(--text-lg) !important;
+}
+
+/* Modal body con scroll */
+div[style*="padding: 1.5rem"][style*="maxHeight"],
+div[style*="padding: 1.5rem"][style*="max-height"] {
+  padding: var(--space-4) !important;
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+
+/* Form groups en modal */
+div[style*="marginBottom: 1.25rem"],
+div[style*="margin-bottom: 1.25rem"] {
+  margin-bottom: var(--space-4) !important;
+}
+
+div[style*="marginBottom: 1.25rem"] label,
+div[style*="margin-bottom: 1.25rem"] label {
+  font-size: var(--text-sm) !important;
+  margin-bottom: var(--space-2) !important;
+  display: block !important;
+}
+
+/* Inputs en modal */
+div[style*="marginBottom: 1.25rem"] input,
+div[style*="margin-bottom: 1.25rem"] input,
+div[style*="marginBottom: 1.25rem"] select,
+div[style*="margin-bottom: 1.25rem"] select,
+div[style*="marginBottom: 1.25rem"] textarea,
+div[style*="margin-bottom: 1.25rem"] textarea {
+  width: 100% !important;
+  min-height: 44px !important;
+  height: 44px !important;
+  font-size: 16px !important;
+  padding: var(--space-3) !important;
+  box-sizing: border-box !important;
+}
+
+div[style*="marginBottom: 1.25rem"] textarea,
+div[style*="margin-bottom: 1.25rem"] textarea {
+  min-height: 100px !important;
+  height: auto !important;
+}
+
+/* Modal footer */
+div[style*="borderTop: 1px solid"][style*="padding: 1.25rem"] {
+  padding: var(--space-4) !important;
+  flex-direction: column-reverse !important;
+  gap: var(--space-2) !important;
+  position: sticky !important;
+  bottom: 0 !important;
+  background: var(--bg-darker) !important;
+  z-index: 10 !important;
+}
+
+div[style*="borderTop: 1px solid"] button {
+  width: 100% !important;
+  height: 48px !important;
+  font-size: 16px !important;
+  justify-content: center !important;
+  flex: none !important;
+}
+
+/* Botón cerrar modal */
+button[style*="position: absolute"][style*="top"][style*="right"] {
+  width: 40px !important;
+  height: 40px !important;
+  top: var(--space-3) !important;
+  right: var(--space-3) !important;
+}
+
+/* ============================================
+   PREVIEW CARD - Vista previa del cupón
+   ============================================ */
+
+[style*="background: linear-gradient"] {
+  padding: var(--space-4) !important;
+  min-height: auto !important;
+}
+
+[style*="fontSize: 2.5rem"] {
+  font-size: 2rem !important;
+}
+
+[style*="fontSize: 1.2rem"] {
+  font-size: 1rem !important;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+[style*="textAlign: center"][style*="padding: 4rem"] {
+  padding: var(--space-8) var(--space-4) !important;
+}
+
+[style*="textAlign: center"] h3 {
+  font-size: var(--text-xl) !important;
+}
+
+[style*="textAlign: center"] p {
+  font-size: var(--text-sm) !important;
+}
+
+/* ============================================
+   SAFE AREAS
+   ============================================ */
+
+@supports (padding: max(0px)) {
+  .discounts-page,
+  [style*="padding: 2rem"] {
+    padding-top: max(var(--space-4), env(safe-area-inset-top)) !important;
+    padding-left: max(var(--space-4), env(safe-area-inset-left)) !important;
+    padding-right: max(var(--space-4), env(safe-area-inset-right)) !important;
+    padding-bottom: max(var(--space-4), env(safe-area-inset-bottom)) !important;
+  }
+}
+
+} /* Fin del @media (max-width: 768px) */

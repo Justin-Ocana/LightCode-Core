@@ -1,0 +1,193 @@
+/**
+ * Alert Component Styles - Dashboard
+ * Estilos para alertas/notificaciones del dashboard
+ */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid;
+  background: var(--bg-card);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: alert-slide-in 0.3s ease;
+}
+
+@keyframes alert-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.alert-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+}
+
+.alert-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.alert-title {
+  font-weight: 600;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-1);
+  color: var(--text-primary);
+}
+
+.alert-body {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.alert-close {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: currentColor;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.alert-close:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================
+   ALERT VARIANTS
+   ============================================ */
+
+/* Info */
+.alert-info {
+  background: rgba(59, 130, 246, 0.25);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #3B82F6;
+}
+
+.alert-info .alert-icon {
+  background: rgba(59, 130, 246, 0.25);
+  color: #60A5FA;
+}
+
+.alert-info .alert-title {
+  color: #60A5FA;
+}
+
+.alert-info .alert-body {
+  color: #DBEAFE;
+}
+
+/* Success */
+.alert-success {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #10B981;
+}
+
+.alert-success .alert-icon {
+  background: rgba(16, 185, 129, 0.25);
+  color: #34D399;
+}
+
+.alert-success .alert-title {
+  color: #34D399;
+}
+
+.alert-success .alert-body {
+  color: #D1FAE5;
+}
+
+/* Warning */
+.alert-warning {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #F59E0B;
+}
+
+.alert-warning .alert-icon {
+  background: rgba(245, 158, 11, 0.25);
+  color: #FBBF24;
+}
+
+.alert-warning .alert-title {
+  color: #FBBF24;
+}
+
+.alert-warning .alert-body {
+  color: #FEF3C7;
+}
+
+/* Error / Danger */
+.alert-error,
+.alert-danger {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #EF4444;
+}
+
+.alert-error .alert-icon,
+.alert-danger .alert-icon {
+  background: rgba(239, 68, 68, 0.25);
+  color: #F87171;
+}
+
+.alert-error .alert-title,
+.alert-danger .alert-title {
+  color: #F87171;
+}
+
+.alert-error .alert-body,
+.alert-danger .alert-body {
+  color: #FEE2E2;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .alert {
+    padding: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .alert-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .alert-title {
+    font-size: var(--text-sm);
+  }
+
+  .alert-body {
+    font-size: var(--text-xs);
+  }
+}

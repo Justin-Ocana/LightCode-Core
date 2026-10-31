@@ -1,0 +1,597 @@
+/* ============================================
+   PREMIUM SHOP SIDEBAR - Ultra Clean
+   Responsive: Sidebar on Desktop, Drawer on Mobile
+   Optimized for Android
+   ============================================ */
+
+/* ===== MOBILE FILTER BUTTON ===== */
+.mobile-filter-btn {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 998;
+  padding: 14px 24px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 50px;
+  color: #050505;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-filter-btn:active {
+  transform: scale(0.95);
+}
+
+.filter-badge {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050505;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+/* ===== OVERLAY ===== */
+.shop-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  touch-action: none;
+}
+
+.shop-sidebar-overlay--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== SIDEBAR (Desktop) / DRAWER (Mobile) ===== */
+.shop-sidebar {
+  width: 300px;
+  background: #070707;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+/* Mobile Header (Hidden on Desktop) */
+.sidebar-mobile-header {
+  display: none;
+}
+
+/* Scrollable Content */
+.sidebar-content {
+  flex: 1;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile Footer (Hidden on Desktop) */
+.sidebar-mobile-footer {
+  display: none;
+}
+
+/* ===== SEARCH BAR ===== */
+.sidebar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  color: #666666;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 11px 38px 11px 40px;
+  background: #0F0F0F;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.search-input::placeholder {
+  color: #666666;
+}
+
+.search-input:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.search-clear {
+  position: absolute;
+  right: 12px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.search-clear:active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+/* ===== FILTER SECTIONS ===== */
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-icon {
+  color: #888888;
+  flex-shrink: 0;
+}
+
+.filter-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #888888;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* ===== CATEGORY OPTIONS ===== */
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-option {
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: #BDBDBD;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-option:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.filter-option.active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* ===== SELECT ===== */
+.filter-select {
+  width: 100%;
+  padding: 10px 14px;
+  background: #0F0F0F;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23BDBDBD' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filter-select:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.filter-select option {
+  background: #0F0F0F;
+  color: #FFFFFF;
+}
+
+/* ===== PRICE RANGE ===== */
+.price-range {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.price-input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.price-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #0F0F0F;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.price-input::-webkit-outer-spin-button,
+.price-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.price-input::placeholder {
+  color: #666666;
+}
+
+.price-input:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.price-input:focus {
+  outline: none;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.price-separator {
+  color: #666666;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+  user-select: none;
+}
+
+/* ===== CLEAR FILTERS BUTTON ===== */
+.clear-filters-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #888888;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: auto;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.clear-filters-btn:active {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  transform: scale(0.98);
+}
+
+/* ===== SCROLLBAR ===== */
+.sidebar-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== RESPONSIVE - TABLET ===== */
+@media (max-width: 1024px) {
+  .shop-sidebar {
+    width: 280px;
+  }
+}
+
+/* ===== RESPONSIVE - MOBILE (DRAWER MODE) ===== */
+@media (max-width: 768px) {
+  /* Show mobile filter button */
+  .mobile-filter-btn {
+    display: flex;
+  }
+
+  /* Transform sidebar into drawer */
+  .shop-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overscroll-behavior: contain;
+  }
+
+  .shop-sidebar--open {
+    transform: translateX(0);
+  }
+
+  /* Show mobile header */
+  .sidebar-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+  }
+
+  .sidebar-mobile-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  .filter-count-badge {
+    min-width: 24px;
+    height: 24px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 12px;
+  }
+
+  .sidebar-close-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .sidebar-close-btn:active {
+    background: rgba(255, 255, 255, 0.08);
+    transform: scale(0.95);
+  }
+
+  /* Adjust content padding */
+  .sidebar-content {
+    padding: 20px;
+    gap: 24px;
+  }
+
+  /* Show mobile footer */
+  .sidebar-mobile-footer {
+    display: block;
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+    background: #070707;
+  }
+
+  .apply-filters-btn {
+    width: 100%;
+    padding: 14px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    color: #050505;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 48px;
+  }
+
+  .apply-filters-btn:active {
+    transform: scale(0.98);
+    background: #E5E5E5;
+  }
+
+  /* Adjust price range for mobile */
+  .price-range {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .price-separator {
+    display: none;
+  }
+
+  /* Remove margin-top from clear button */
+  .clear-filters-btn {
+    margin-top: 0;
+  }
+}
+
+/* ===== RESPONSIVE - SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .mobile-filter-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 0.875rem;
+  }
+
+  .shop-sidebar {
+    max-width: 100%;
+  }
+
+  .sidebar-mobile-header {
+    padding: 16px;
+  }
+
+  .sidebar-content {
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .sidebar-mobile-footer {
+    padding: 12px 16px;
+  }
+
+  .filter-option {
+    font-size: 0.875rem;
+  }
+
+  .filter-select {
+    font-size: 0.875rem;
+  }
+
+  .price-input {
+    font-size: 0.875rem;
+  }
+}
+
+/* ===== ANDROID OPTIMIZATIONS ===== */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .filter-option:hover,
+  .filter-select:hover,
+  .price-input:hover,
+  .search-input:hover,
+  .clear-filters-btn:hover,
+  .search-clear:hover {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .filter-option.active:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Safe area insets for notched devices */
+@supports (padding: max(0px)) {
+  @media (max-width: 768px) {
+    .sidebar-mobile-header {
+      padding-top: max(20px, env(safe-area-inset-top));
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+    }
+
+    .sidebar-mobile-footer {
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+    }
+
+    .mobile-filter-btn {
+      bottom: max(24px, calc(env(safe-area-inset-bottom) + 12px));
+      right: max(24px, env(safe-area-inset-right));
+    }
+  }
+}

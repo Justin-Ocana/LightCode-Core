@@ -1,0 +1,296 @@
+/* ============================================
+   PAYMENT METHODS MOBILE - lightcode DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .payment-methods-page {
+    padding-bottom: var(--space-8);
+  }
+
+  /* Header */
+  .payment-header {
+    padding: var(--space-6) var(--space-5);
+    margin-bottom: var(--space-6);
+  }
+
+  .payment-header-content h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .payment-subtitle {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .payment-trust-message {
+    font-size: var(--text-xs);
+    padding: var(--space-1-5) var(--space-3);
+  }
+
+  /* Status Banner */
+  .payment-status-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-5);
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+  }
+
+  .status-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .status-content h3 {
+    font-size: var(--text-lg);
+  }
+
+  .status-content p {
+    font-size: var(--text-xs);
+  }
+
+  /* Payment Methods Grid */
+  .payment-methods-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+    margin-bottom: var(--space-8);
+  }
+
+  /* Payment Method Card */
+  .payment-method-card {
+    padding: var(--space-5);
+  }
+
+  .method-header {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .method-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .method-logo.mercadopago img {
+    width: 110%;
+    height: 110%;
+  }
+
+  .method-logo.stripe img {
+    width: 120%;
+    height: 120%;
+  }
+
+  .method-badge {
+    margin-left: auto;
+  }
+
+  .method-body h3 {
+    font-size: var(--text-xl);
+  }
+
+  .method-description {
+    font-size: var(--text-sm);
+  }
+
+  /* Connected Status */
+  .method-status-connected {
+    padding: var(--space-3);
+  }
+
+  .connected-email {
+    font-size: var(--text-sm);
+  }
+
+  .connected-message {
+    font-size: var(--text-xs);
+  }
+
+  /* Benefits */
+  .benefit-item {
+    font-size: var(--text-xs);
+  }
+
+  /* Trust Message */
+  .method-trust {
+    padding: var(--space-2-5) var(--space-3);
+    font-size: 11px;
+  }
+
+  /* Method Actions */
+  .method-actions {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .method-actions .btn {
+    width: 100%;
+  }
+
+  /* Security Section */
+  .payment-security-section {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-6);
+    gap: var(--space-4);
+  }
+
+  .security-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .security-content h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .security-list li {
+    justify-content: center;
+    font-size: var(--text-sm);
+  }
+
+  /* Empty State */
+  .empty-state-payment {
+    padding: var(--space-12);
+    min-height: 300px;
+  }
+
+  .empty-state-payment h3 {
+    font-size: var(--text-xl);
+  }
+
+  .empty-state-payment p {
+    font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-header {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .payment-header-content h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .payment-subtitle {
+    font-size: var(--text-xs);
+  }
+
+  .payment-trust-message {
+    font-size: 11px;
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .payment-trust-message svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .payment-status-banner {
+    padding: var(--space-4);
+  }
+
+  .status-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .status-content h3 {
+    font-size: var(--text-base);
+  }
+
+  .payment-method-card {
+    padding: var(--space-4);
+  }
+
+  .method-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .method-logo.mercadopago img {
+    width: 110%;
+    height: 110%;
+  }
+
+  .method-logo.stripe img {
+    width: 120%;
+    height: 120%;
+  }
+
+  .method-badge {
+    font-size: 10px;
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .method-body h3 {
+    font-size: var(--text-lg);
+  }
+
+  .method-description {
+    font-size: var(--text-xs);
+  }
+
+  .benefit-item {
+    font-size: 11px;
+  }
+
+  .benefit-item svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .method-trust {
+    font-size: 10px;
+    padding: var(--space-2) var(--space-2-5);
+  }
+
+  .method-trust svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .payment-security-section {
+    padding: var(--space-5);
+  }
+
+  .security-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .security-content h3 {
+    font-size: var(--text-lg);
+  }
+
+  .security-list li {
+    font-size: var(--text-xs);
+  }
+
+  .security-list li svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .payment-header {
+    padding: var(--space-5);
+  }
+
+  .payment-status-banner {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .payment-security-section {
+    flex-direction: row;
+    text-align: left;
+  }
+}

@@ -1,0 +1,357 @@
+/* ============================================
+   NAVBAR MÓVIL - REDISEÑO COMPLETO
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Navbar container - más alto y espacioso */
+    .navbar {
+        padding: var(--space-4) var(--space-5) !important;
+        height: 70px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background: rgba(9, 9, 15, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+    }
+
+    /* Logo más grande y visible - SIN brillo verde */
+    .navbar-logo {
+        order: 1 !important;
+        margin: 0 !important;
+        margin-right: auto !important;
+        z-index: 10001 !important;
+    }
+
+    .navbar-logo img {
+        height: 36px !important;
+        filter: none !important; /* Sin brillo */
+    }
+
+    /* Hamburger menu - gris neutro */
+    .navbar-mobile-toggle {
+        order: 2 !important;
+        margin-left: auto !important;
+        width: 48px !important;
+        height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 2px solid rgba(255, 255, 255, 0.15) !important;
+        border-radius: 12px !important;
+        transition: all 0.3s ease !important;
+        z-index: 10001 !important;
+    }
+
+    .navbar-mobile-toggle:active {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.25) !important;
+        transform: scale(0.95) !important;
+    }
+
+    .navbar-mobile-toggle svg {
+        color: rgba(255, 255, 255, 0.8) !important;
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    /* Ocultar links en desktop */
+    .navbar-links {
+        display: none !important;
+    }
+
+    /* Mobile menu overlay - pantalla completa con scroll completo */
+    .navbar-links.active {
+        display: flex !important;
+        position: fixed !important;
+        top: 70px !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(9, 9, 15, 0.98) !important;
+        backdrop-filter: blur(30px) !important;
+        padding: var(--space-5) var(--space-5) var(--space-20) !important; /* Más padding abajo */
+        flex-direction: column !important;
+        gap: var(--space-2) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        z-index: 10000 !important;
+        animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        -webkit-overflow-scrolling: touch !important;
+        height: calc(100vh - 70px) !important;
+        max-height: calc(100vh - 70px) !important;
+    }
+
+    /* Asegurar que el contenido no se corte */
+    .navbar-links.active::after {
+        content: '';
+        display: block;
+        height: var(--space-10);
+        flex-shrink: 0;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Links grandes y táctiles */
+    .navbar-links.active > a:not(.btn):not(.navbar-discord-link) {
+        font-size: 1.15rem !important;
+        font-weight: 500 !important;
+        padding: var(--space-4) var(--space-4) !important;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        transition: all 0.3s ease !important;
+        color: var(--text-primary) !important;
+        display: flex !important;
+        align-items: center !important;
+        min-height: 56px !important;
+    }
+
+    .navbar-links.active > a:not(.btn):not(.navbar-discord-link):active {
+        background: rgba(0, 212, 170, 0.1) !important;
+        border-color: rgba(0, 212, 170, 0.3) !important;
+        color: var(--primary) !important;
+        transform: scale(0.98) !important;
+    }
+
+    /* Discord link especial - más prominente */
+    .navbar-discord-link {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important; /* Centrado en móvil */
+        gap: var(--space-3) !important;
+        padding: var(--space-4) var(--space-5) !important;
+        background: rgba(88, 101, 242, 0.15) !important;
+        border: 2px solid rgba(88, 101, 242, 0.4) !important;
+        border-radius: 14px !important;
+        color: #5865F2 !important;
+        font-weight: 600 !important;
+        font-size: 1.05rem !important;
+        transition: all 0.3s ease !important;
+        min-height: 56px !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .navbar-discord-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.5s;
+    }
+
+    .navbar-discord-link:active::before {
+        left: 100%;
+    }
+
+    .navbar-discord-link:active {
+        background: rgba(88, 101, 242, 0.25) !important;
+        border-color: rgba(88, 101, 242, 0.6) !important;
+        transform: scale(0.98) !important;
+    }
+
+    .navbar-discord-link svg {
+        width: 24px !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Texto centrado - sin margin-left auto */
+    .navbar-discord-link span {
+        display: inline !important;
+        font-size: 1rem !important;
+    }
+
+    /* Separador visual antes de Discord */
+    .navbar-links.active .navbar-discord-link {
+        margin-top: var(--space-4) !important;
+    }
+
+    /* Separador visual antes de botones CTA */
+    .navbar-links.active .btn:first-of-type {
+        margin-top: var(--space-6) !important;
+    }
+
+    /* Botones CTA - muy prominentes con espacio extra abajo */
+    .navbar-links.active .btn {
+        width: 100% !important;
+        padding: var(--space-4) var(--space-6) !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+        justify-content: center !important;
+        margin-top: var(--space-2) !important;
+        margin-bottom: var(--space-2) !important;
+        min-height: 56px !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 20px rgba(0, 212, 170, 0.3) !important;
+        flex-shrink: 0 !important; /* No permitir que se compriman */
+    }
+
+    /* Último botón con espacio extra abajo */
+    .navbar-links.active .btn:last-of-type {
+        margin-bottom: var(--space-8) !important;
+    }
+
+    .navbar-links.active .btn-primary {
+        background: var(--primary) !important;
+        border: 2px solid var(--primary) !important;
+    }
+
+    .navbar-links.active .btn-primary:active {
+        transform: scale(0.98) !important;
+        box-shadow: 0 2px 10px rgba(0, 212, 170, 0.4) !important;
+    }
+
+    .navbar-links.active .btn-ghost {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 2px solid rgba(255, 255, 255, 0.15) !important;
+        color: var(--text-primary) !important;
+        box-shadow: none !important;
+    }
+
+    .navbar-links.active .btn-ghost:active {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.25) !important;
+        transform: scale(0.98) !important;
+    }
+
+    /* Dropdown en mobile - más espacioso */
+    .navbar-dropdown {
+        width: 100% !important;
+    }
+
+    .navbar-dropdown-trigger {
+        width: 100% !important;
+        justify-content: space-between !important;
+        font-size: 1.15rem !important;
+        font-weight: 500 !important;
+        padding: var(--space-4) !important;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        color: var(--text-primary) !important;
+        min-height: 56px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .navbar-dropdown-trigger:active {
+        background: rgba(0, 212, 170, 0.1) !important;
+        border-color: rgba(0, 212, 170, 0.3) !important;
+        transform: scale(0.98) !important;
+    }
+
+    .navbar-dropdown-trigger svg {
+        transition: transform 0.3s ease !important;
+    }
+
+    .navbar-dropdown.active .navbar-dropdown-trigger svg {
+        transform: rotate(180deg) !important;
+    }
+
+    .navbar-dropdown-menu {
+        position: static !important;
+        width: 100% !important;
+        margin-top: var(--space-3) !important;
+        margin-bottom: var(--space-4) !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: var(--space-3) !important;
+        animation: slideDown 0.2s ease !important;
+    }
+
+    /* Cards de productos - más atractivas */
+    .navbar-dropdown-card {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 2px solid rgba(255, 255, 255, 0.1) !important;
+        margin-bottom: 0 !important;
+        padding: var(--space-5) !important;
+        border-radius: 14px !important;
+        transition: all 0.3s ease !important;
+        min-height: 80px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .navbar-dropdown-card:active {
+        transform: scale(0.98) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .navbar-dropdown-card-stores {
+        border-color: rgba(0, 212, 170, 0.3) !important;
+        background: rgba(0, 212, 170, 0.08) !important;
+    }
+
+    .navbar-dropdown-card-stores:active {
+        background: rgba(0, 212, 170, 0.15) !important;
+        border-color: rgba(0, 212, 170, 0.5) !important;
+    }
+
+    .navbar-dropdown-card-plugs {
+        border-color: rgba(234, 179, 8, 0.3) !important;
+        background: rgba(234, 179, 8, 0.08) !important;
+    }
+
+    .navbar-dropdown-card-plugs:active {
+        background: rgba(234, 179, 8, 0.15) !important;
+        border-color: rgba(234, 179, 8, 0.5) !important;
+    }
+
+    .navbar-dropdown-card.disabled {
+        opacity: 0.5 !important;
+        pointer-events: none !important;
+    }
+
+    .navbar-dropdown-card-icon {
+        width: 48px !important;
+        height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 12px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .navbar-dropdown-card-content h3 {
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        margin-bottom: var(--space-1) !important;
+    }
+
+    .navbar-dropdown-card-content p {
+        font-size: 0.9rem !important;
+        opacity: 0.8 !important;
+    }
+
+    .navbar-dropdown-card-badge {
+        margin-left: auto !important;
+        padding: var(--space-1) var(--space-3) !important;
+        background: rgba(0, 212, 170, 0.15) !important;
+        border: 1px solid rgba(0, 212, 170, 0.3) !important;
+        border-radius: 8px !important;
+        font-size: 0.75rem !important;
+        font-weight: 600 !important;
+        color: var(--primary) !important;
+    }
+}

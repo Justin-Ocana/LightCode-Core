@@ -1,0 +1,47 @@
+# Configuración de ejemplo para server.properties de Minecraft
+# Copia estas líneas a tu archivo server.properties del servidor
+
+# ============================================================================
+# CONFIGURACIÓN RCON (Remote Console)
+# ============================================================================
+
+# Habilitar RCON
+enable-rcon=true
+
+# Puerto RCON (por defecto 25575, diferente al puerto del juego)
+rcon.port=25575
+
+# Contraseña RCON (CAMBIA ESTA CONTRASEÑA)
+rcon.password=mi_contraseña_segura_123
+
+# ============================================================================
+# CONFIGURACIÓN BÁSICA DEL SERVIDOR
+# ============================================================================
+
+# Puerto del juego (por defecto 25565)
+server-port=25565
+
+# IP del servidor (deja vacío para todas las interfaces)
+server-ip=
+
+# Modo de juego
+gamemode=survival
+
+# Dificultad
+difficulty=easy
+
+# Máximo de jugadores
+max-players=20
+
+# Mensaje del día
+motd=Mi Servidor de Minecraft con LightCode
+
+# ============================================================================
+# NOTAS IMPORTANTES
+# ============================================================================
+
+# 1. El puerto RCON (25575) es DIFERENTE al puerto del juego (25565)
+# 2. Después de modificar este archivo, REINICIA el servidor
+# 3. Asegúrate de que el firewall permita el puerto RCON
+# 4. La contraseña RCON debe ser segura y única
+# 5. NUNCA compartas tu contraseña RCON públicamente

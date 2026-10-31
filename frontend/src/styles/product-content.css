@@ -1,0 +1,100 @@
+/* ============ SECCIÓN CONTENIDO ============ */
+.section-header-with-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.btn-add-content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.btn-add-content:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.section-description {
+  color: var(--text-tertiary);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-6);
+}
+
+.product-content-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.content-empty-state {
+  padding: var(--space-8);
+  text-align: center;
+  background: var(--bg-darker);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-tertiary);
+  font-size: var(--text-sm);
+}
+
+.content-item-row {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  background: var(--bg-darker);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  transition: border-color var(--transition-base);
+}
+
+.content-item-row:hover {
+  border-color: var(--border-hover);
+}
+
+.content-item-icon {
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.input-icon {
+  text-align: center;
+  font-size: var(--text-xl);
+}
+
+.content-item-text {
+  flex: 1;
+}
+
+.btn-remove-content {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.btn-remove-content:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.2);
+}

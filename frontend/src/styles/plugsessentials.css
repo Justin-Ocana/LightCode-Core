@@ -1,0 +1,39 @@
+/* PlugsEssentials Theme - Golden Colors */
+:root {
+    --plugs-gold: #D4AF37;
+    --plugs-gold-light: #FFD700;
+    --plugs-gold-dark: #B8941F;
+}
+
+/* PlugsEssentials specific styles */
+.plugs-gradient-text {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.plugs-gradient-bg {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+}
+
+.plugs-border {
+    border: 2px solid var(--plugs-gold);
+}
+
+.plugs-glow {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.plugs-btn {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+    color: #000;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.plugs-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}

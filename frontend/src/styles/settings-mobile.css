@@ -1,0 +1,273 @@
+/* ============================================
+   SETTINGS PAGE - MOBILE OPTIMIZATION
+   Optimizado para Android/iOS
+   ============================================ */
+
+@media (max-width: 768px) {
+
+/* ============================================
+   PAGE LAYOUT
+   ============================================ */
+
+.settings-page {
+  padding: 0 !important;
+}
+
+.settings-container {
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+/* ============================================
+   TABS - Horizontal scroll
+   ============================================ */
+
+.settings-tabs {
+  width: 100% !important;
+  border-right: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 0 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.settings-tabs::-webkit-scrollbar {
+  display: none !important;
+}
+
+.settings-tab {
+  flex-shrink: 0 !important;
+  padding: var(--space-3) var(--space-4) !important;
+  border-right: none !important;
+  border-bottom: 2px solid transparent !important;
+  min-width: auto !important;
+  white-space: nowrap !important;
+  font-size: var(--text-sm) !important;
+}
+
+.settings-tab.active {
+  border-right: none !important;
+  border-bottom-color: var(--primary) !important;
+  background: transparent !important;
+}
+
+.settings-tab svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* ============================================
+   CONTENT
+   ============================================ */
+
+.settings-content {
+  width: 100% !important;
+  padding: var(--space-4) !important;
+}
+
+.settings-section {
+  margin-bottom: var(--space-6) !important;
+}
+
+.settings-section-title {
+  font-size: var(--text-lg) !important;
+  margin-bottom: var(--space-3) !important;
+}
+
+/* ============================================
+   FORM FIELDS
+   ============================================ */
+
+.form-group {
+  margin-bottom: var(--space-4) !important;
+}
+
+.form-group label {
+  font-size: var(--text-sm) !important;
+  margin-bottom: var(--space-2) !important;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100% !important;
+  min-height: 44px !important;
+  font-size: 16px !important; /* Evita zoom en iOS */
+  padding: var(--space-3) !important;
+}
+
+.form-group textarea {
+  min-height: 100px !important;
+}
+
+.form-hint {
+  font-size: var(--text-xs) !important;
+  margin-top: var(--space-1-5) !important;
+}
+
+/* ============================================
+   PROFILE IMAGE UPLOAD
+   ============================================ */
+
+.profile-image-section {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: var(--space-3) !important;
+}
+
+.profile-image-preview {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.profile-image-actions {
+  width: 100% !important;
+  flex-direction: column !important;
+}
+
+.profile-image-actions .btn {
+  width: 100% !important;
+  height: 44px !important;
+  justify-content: center !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.settings-actions {
+  flex-direction: column !important;
+  gap: var(--space-2) !important;
+  padding-top: var(--space-4) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+.settings-actions .btn {
+  width: 100% !important;
+  height: 48px !important;
+  font-size: 16px !important;
+  justify-content: center !important;
+}
+
+/* ============================================
+   DANGER ZONE
+   ============================================ */
+
+.danger-zone {
+  padding: var(--space-4) !important;
+  margin-top: var(--space-6) !important;
+}
+
+.danger-zone h3 {
+  font-size: var(--text-base) !important;
+}
+
+.danger-zone p {
+  font-size: var(--text-sm) !important;
+}
+
+.danger-zone .btn {
+  width: 100% !important;
+  height: 44px !important;
+  font-size: 14px !important;
+}
+
+/* ============================================
+   SUBSCRIPTION CARD
+   ============================================ */
+
+.subscription-card {
+  padding: var(--space-4) !important;
+}
+
+.subscription-card h3 {
+  font-size: var(--text-lg) !important;
+}
+
+.subscription-card .btn {
+  width: 100% !important;
+  height: 44px !important;
+  margin-top: var(--space-3) !important;
+}
+
+/* ============================================
+   INTEGRATIONS
+   ============================================ */
+
+.integration-card {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  padding: var(--space-4) !important;
+}
+
+.integration-info {
+  margin-bottom: var(--space-3) !important;
+}
+
+.integration-actions {
+  width: 100% !important;
+}
+
+.integration-actions .btn {
+  width: 100% !important;
+  height: 44px !important;
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+
+.modal-overlay {
+  padding: 0 !important;
+  align-items: flex-end !important;
+}
+
+.modal {
+  max-width: 100% !important;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0 !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+}
+
+.modal-header {
+  padding: var(--space-4) !important;
+}
+
+.modal-body {
+  padding: var(--space-4) !important;
+}
+
+.modal-footer {
+  padding: var(--space-4) !important;
+  flex-direction: column-reverse !important;
+  gap: var(--space-2) !important;
+}
+
+.modal-footer .btn {
+  width: 100% !important;
+  height: 48px !important;
+  font-size: 16px !important;
+}
+
+/* ============================================
+   SAFE AREAS
+   ============================================ */
+
+@supports (padding: max(0px)) {
+  .settings-tabs {
+    padding-top: max(0px, env(safe-area-inset-top)) !important;
+  }
+
+  .settings-content {
+    padding-left: max(var(--space-4), env(safe-area-inset-left)) !important;
+    padding-right: max(var(--space-4), env(safe-area-inset-right)) !important;
+    padding-bottom: max(var(--space-4), env(safe-area-inset-bottom)) !important;
+  }
+}
+
+} /* Fin del @media (max-width: 768px) */

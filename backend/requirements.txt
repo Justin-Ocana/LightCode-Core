@@ -1,0 +1,67 @@
+# Core Djangos
+Django==4.2.29
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+
+# Database (psycopg3 es más compatible con Python 3.14)
+psycopg[binary]>=3.1.0
+dj-database-url==2.1.0
+
+# Environment & Security
+python-decouple==3.8
+django-environ==0.11.2
+
+# Caching & Performance
+redis==5.0.1
+django-redis==5.4.0
+# hiredis==2.3.2  # Opcional: requiere compilación en Windows
+
+# Async Tasks
+celery==5.3.4
+django-celery-beat==2.5.0
+django-celery-results==2.5.1
+
+# WebSockets & Real-time
+channels==4.0.0
+channels-redis==4.1.0
+daphne==4.0.0
+
+# Rate Limiting & Throttling
+django-ratelimit==4.1.0
+django-axes==6.1.1
+
+# Authentication & Permissions
+djangorestframework-simplejwt==5.3.1
+django-guardian==2.4.0
+argon2-cffi==23.1.0
+cryptography>=45.0.7
+
+# Monitoring & Logging
+sentry-sdk==1.40.0
+
+# File Handling
+Pillow>=11.0.0
+cloudinary==1.36.0
+django-cloudinary-storage==0.3.0
+
+# API Documentation
+drf-spectacular==0.27.1
+bleach==6.1.0
+
+# Filtering
+django-filter==23.5
+
+# Production Server
+gunicorn==21.2.0
+uvicorn[standard]==0.24.0
+
+# testing
+pytest==7.4.4
+pytest-django==4.7.0
+pytest-cov==4.1.0
+factory-boy==3.3.0
+
+# Code Quality
+black==24.1.1
+flake8==7.0.0
+isort==5.13.2

@@ -1,0 +1,46 @@
+{
+  "headers": [
+    {
+      "source": "/favicon.(png|svg|ico)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/store/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(bot|crawler|spider|crawling|Discordbot|Twitterbot|facebookexternalhit|WhatsApp|Slackbot|LinkedInBot|TelegramBot).*"
+        }
+      ],
+      "destination": "https://lightcode-core-v1.onrender.com/api/stores/meta/:slug/"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://lightcode-core-v1.onrender.com/api/:path*"
+    },
+    {
+      "source": "/media/:path*",
+      "destination": "https://lightcode-core-v1.onrender.com/media/:path*"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.png"
+    },
+    {
+      "source": "/((?!api|media|favicon.ico|favicon.png|favicon.svg).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

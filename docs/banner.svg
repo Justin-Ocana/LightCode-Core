@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="LightCode Core">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05060a"/><stop offset="1" stop-color="#0d1330"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b82f6"/><stop offset="0.5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3a6"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.35"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="320" rx="24" fill="url(#grid)"/>
+  <circle cx="600" cy="70" r="220" fill="url(#halo)"/>
+  <g transform="translate(600 92)">
+    <path d="M0 -38 L34 30 L0 18 L-34 30 Z" fill="url(#glow)"/>
+    <path d="M0 -38 L0 18" stroke="#05060a" stroke-opacity="0.45" stroke-width="3"/>
+  </g>
+  <text x="600" y="190" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="68" font-weight="800" fill="#ffffff" letter-spacing="-1.5">LightCode <tspan fill="url(#glow)">Core</tspan></text>
+  <text x="600" y="232" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22" fill="#9aa4c2">E-commerce para servidores de Minecraft · entrega automática vía RCON</text>
+  <rect x="380" y="258" width="440" height="3" rx="1.5" fill="url(#glow)" opacity="0.8"/>
+</svg>

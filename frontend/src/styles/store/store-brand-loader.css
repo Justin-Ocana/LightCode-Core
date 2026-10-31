@@ -1,0 +1,195 @@
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes store-loader-float {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate3d(0, -10px, 0) rotate(-2deg) scale(1.02);
+  }
+  50% {
+    transform: translate3d(0, -16px, 0) rotate(0deg) scale(1.04);
+  }
+  75% {
+    transform: translate3d(0, -10px, 0) rotate(2deg) scale(1.02);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes store-loader-progress {
+  0% { left: -60%; }
+  100% { left: 120%; }
+}
+
+@keyframes store-loader-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.store-brand-loader {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  background: var(--color-background) !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-body) !important;
+}
+
+.store-brand-loader--overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9998 !important;
+}
+
+.store-brand-loader--embedded {
+  min-height: 14rem !important;
+  width: 100% !important;
+  padding: 2rem 1rem !important;
+  border-radius: var(--radius-xl) !important;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.store-brand-loader__main {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 2.5rem !important;
+  position: relative !important;
+  text-align: center !important;
+  padding: 0 1rem !important;
+}
+
+/* =========================
+   CUBO / LOGO (AQUÍ ESTÁ LA CLAVE)
+========================= */
+
+.store-brand-loader__logo {
+  width: 140px !important;
+  height: 140px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+
+  animation-name: store-loader-float !important;
+  animation-duration: 3.2s !important;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  animation-iteration-count: infinite !important;
+
+  transform-origin: center center !important;
+  will-change: transform !important;
+
+  filter: drop-shadow(0 10px 30px rgba(255,255,255,0.12)) !important;
+}
+
+.store-brand-loader__logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.95 !important;
+
+
+  pointer-events: none !important;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.store-brand-loader__progress {
+  width: 260px !important;
+  height: 6px !important;
+  background: rgba(255,255,255,0.06) !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.store-brand-loader__progress-bar {
+  position: absolute !important;
+  top: 0 !important;
+  width: 50% !important;
+  height: 100% !important;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.9) 50%,
+    transparent 100%
+  ) !important;
+
+  border-radius: 999px !important;
+
+  animation-name: store-loader-progress !important;
+  animation-duration: 1.6s !important;
+  animation-timing-function: cubic-bezier(0.4,0,0.2,1) !important;
+  animation-iteration-count: infinite !important;
+
+  will-change: left !important;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.store-brand-loader__slow {
+  display: flex !important;
+  justify-content: center !important;
+  animation: store-loader-fade-in 0.5s ease-out !important;
+}
+
+.store-brand-loader__slow-hint {
+  font-size: 0.85rem !important;
+  color: var(--color-text-secondary) !important;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .store-brand-loader__logo {
+    animation: none !important;
+  }
+
+  .store-brand-loader__progress-bar {
+    animation-duration: 3s !important;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+  .store-brand-loader__logo {
+    width: 110px !important;
+    height: 110px !important;
+  }
+
+  .store-brand-loader__progress {
+    width: 200px !important;
+    height: 5px !important;
+  }
+}

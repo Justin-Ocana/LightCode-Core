@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "acorn": "^8.16.0",
+    "javascript-obfuscator": "^5.4.2"
+  }
+}

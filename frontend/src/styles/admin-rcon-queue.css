@@ -1,0 +1,562 @@
+.admin-rcon-queue {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.queue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.queue-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.queue-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.btn-refresh {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-refresh:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Estadísticas globales */
+.global-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Filtros */
+.queue-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Lista de tiendas */
+.stores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.store-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.store-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.store-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.store-info {
+  flex: 1;
+}
+
+.store-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.store-meta {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.store-stats {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.stat-badge {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.stat-badge.delivered {
+  background: #d4edda;
+  color: #155724;
+}
+
+.stat-badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.stat-badge.failed {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.stat-badge.cancelled {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+.next-retry {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.retry-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.countdown-timer {
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.countdown-timer.active {
+  color: var(--primary);
+}
+
+.countdown-timer.past {
+  color: var(--warning);
+}
+
+.expand-btn {
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  transition: transform 0.2s;
+}
+
+/* Jobs de la tienda */
+.store-jobs {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem;
+  background: var(--background);
+}
+
+.jobs-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-item {
+  height: 100px;
+  background: linear-gradient(90deg, var(--surface) 25%, var(--border) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.job-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.job-card.status-failed {
+  border-left: 4px solid #dc3545;
+}
+
+.job-card.status-pending {
+  border-left: 4px solid #ffc107;
+}
+
+.job-card.status-delivered {
+  border-left: 4px solid #28a745;
+}
+
+.job-card.status-cancelled {
+  border-left: 4px solid #6c757d;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.job-info {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.job-order {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.job-player {
+  font-weight: 500;
+}
+
+.job-product {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.job-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.job-status.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.job-status.status-delivered {
+  background: #d4edda;
+  color: #155724;
+}
+
+.job-status.status-failed {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.job-status.status-cancelled {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+/* Error badges */
+.job-error {
+  background: var(--background);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.error-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.badge-error-network {
+  background: #ff9800;
+  color: white;
+}
+
+.badge-error-auth {
+  background: #dc3545;
+  color: white;
+}
+
+.badge-error-command {
+  background: #dc3545;
+  color: white;
+}
+
+.badge-error-player {
+  background: #ffc107;
+  color: #000;
+}
+
+.badge-error-unknown {
+  background: #6c757d;
+  color: white;
+}
+
+.error-tip {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+
+.error-message {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  margin: 0.5rem 0 0 0;
+}
+
+.job-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.next-retry-inline {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.cancelled-info {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.job-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-cancel {
+  padding: 0.5rem 1rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #c82333;
+}
+
+.btn-view-log {
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-view-log:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-job-info {
+  background: var(--background);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.modal-job-info p {
+  margin: 0.5rem 0;
+}
+
+.modal-warning {
+  color: var(--warning);
+  font-size: 0.875rem;
+  margin: 1rem 0;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-danger {
+  padding: 0.75rem 1.5rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem;
+  color: var(--text-secondary);
+}

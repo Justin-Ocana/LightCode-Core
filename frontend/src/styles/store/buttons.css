@@ -1,0 +1,236 @@
+/* ============================================
+   STORE BUTTONS - Global Styles
+   ============================================ */
+
+.store-btn {
+  /* Propiedades estructurales que NO deben cambiar */
+  font-family: var(--font-body) !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  
+  /* Propiedades que SÍ pueden cambiar según el estilo (sin !important) */
+  font-weight: 600;
+  transition: all 0.2s;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+}
+
+.store-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Forzar tipografía y quitar bordes en botones flotantes y laterales */
+.store-sidebar__trigger,
+.store-sidebar__drawer-trigger,
+.store-sidebar__apply,
+.store-sidebar__reset,
+.store-sidebar__category-btn {
+  font-family: var(--font-body) !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.store-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   SOLID BUTTONS
+   ============================================ */
+
+[data-button-style="solid"] .store-btn,
+[data-button-style="solid"] .store-btn--primary,
+[data-button-style="solid"] .product-card__cart-btn,
+[data-button-style="solid"] .store-block__cta,
+[data-button-style="solid"] .store-block__discord-btn,
+[data-button-style="solid"] .store-sidebar__category-btn,
+[data-button-style="solid"] .store-sidebar__apply,
+[data-button-style="solid"] .store-sidebar__reset,
+[data-button-style="solid"] .store-dropdown__btn,
+[data-button-style="solid"] .store-sidebar__trigger,
+[data-button-style="solid"] .store-sidebar__drawer-trigger {
+  padding: 0.75rem 1.5rem !important;
+  background: var(--color-primary) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  border: none !important;
+}
+
+[data-button-style="solid"] .store-btn--secondary {
+  background: var(--color-secondary) !important;
+  color: white !important;
+}
+
+[data-button-style="solid"] .store-btn:hover,
+[data-button-style="solid"] .store-btn--primary:hover,
+[data-button-style="solid"] .product-card__cart-btn:hover,
+[data-button-style="solid"] .store-block__cta:hover,
+[data-button-style="solid"] .store-block__discord-btn:hover,
+[data-button-style="solid"] .store-sidebar__category-btn:hover,
+[data-button-style="solid"] .store-sidebar__apply:hover,
+[data-button-style="solid"] .store-sidebar__reset:hover,
+[data-button-style="solid"] .store-dropdown__btn:hover,
+[data-button-style="solid"] .store-sidebar__trigger:hover,
+[data-button-style="solid"] .store-sidebar__drawer-trigger:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ============================================
+   OUTLINE BUTTONS
+   ============================================ */
+
+[data-button-style="outline"] .store-btn,
+[data-button-style="outline"] .store-btn--primary,
+[data-button-style="outline"] .product-card__cart-btn,
+[data-button-style="outline"] .store-block__cta,
+[data-button-style="outline"] .store-block__discord-btn,
+[data-button-style="outline"] .store-sidebar__category-btn,
+[data-button-style="outline"] .store-sidebar__apply,
+[data-button-style="outline"] .store-sidebar__reset,
+[data-button-style="outline"] .store-dropdown__btn,
+[data-button-style="outline"] .store-sidebar__trigger,
+[data-button-style="outline"] .store-sidebar__drawer-trigger {
+  padding: 0.75rem 1.5rem !important;
+  background: transparent !important;
+  color: var(--color-primary) !important;
+  border: 2px solid var(--color-primary) !important;
+  border-radius: 8px !important;
+}
+
+[data-button-style="outline"] .store-btn--secondary {
+  color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+}
+
+[data-button-style="outline"] .store-btn:hover,
+[data-button-style="outline"] .store-btn--primary:hover,
+[data-button-style="outline"] .product-card__cart-btn:hover,
+[data-button-style="outline"] .store-block__cta:hover,
+[data-button-style="outline"] .store-block__discord-btn:hover,
+[data-button-style="outline"] .store-sidebar__category-btn:hover,
+[data-button-style="outline"] .store-sidebar__apply:hover,
+[data-button-style="outline"] .store-sidebar__reset:hover,
+[data-button-style="outline"] .store-dropdown__btn:hover,
+[data-button-style="outline"] .store-sidebar__trigger:hover,
+[data-button-style="outline"] .store-sidebar__drawer-trigger:hover {
+  background: var(--color-primary) !important;
+  color: white !important;
+}
+
+[data-button-style="outline"] .store-btn--secondary:hover {
+  background: var(--color-secondary) !important;
+  color: white !important;
+}
+
+/* ============================================
+   PILL GRADIENT BUTTONS
+   ============================================ */
+
+[data-button-style="pill_gradient"] .store-btn,
+[data-button-style="pill_gradient"] .store-btn--primary,
+[data-button-style="pill_gradient"] .product-card__cart-btn,
+[data-button-style="pill_gradient"] .store-block__cta,
+[data-button-style="pill_gradient"] .store-block__discord-btn,
+[data-button-style="pill_gradient"] .store-sidebar__category-btn,
+[data-button-style="pill_gradient"] .store-sidebar__apply,
+[data-button-style="pill_gradient"] .store-sidebar__reset,
+[data-button-style="pill_gradient"] .store-dropdown__btn,
+[data-button-style="pill_gradient"] .store-sidebar__trigger,
+[data-button-style="pill_gradient"] .store-sidebar__drawer-trigger {
+  padding: 0.75rem 1.5rem !important;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+  color: white !important;
+  border-radius: 50px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  border: none !important;
+}
+
+[data-button-style="pill_gradient"] .store-btn--secondary {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%) !important;
+}
+
+[data-button-style="pill_gradient"] .store-btn:hover,
+[data-button-style="pill_gradient"] .store-btn--primary:hover,
+[data-button-style="pill_gradient"] .product-card__cart-btn:hover,
+[data-button-style="pill_gradient"] .store-block__cta:hover,
+[data-button-style="pill_gradient"] .store-block__discord-btn:hover,
+[data-button-style="pill_gradient"] .store-sidebar__category-btn:hover,
+[data-button-style="pill_gradient"] .store-sidebar__apply:hover,
+[data-button-style="pill_gradient"] .store-sidebar__reset:hover,
+[data-button-style="pill_gradient"] .store-dropdown__btn:hover,
+[data-button-style="pill_gradient"] .store-sidebar__trigger:hover,
+[data-button-style="pill_gradient"] .store-sidebar__drawer-trigger:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   SHARP BUTTONS
+   ============================================ */
+
+[data-button-style="sharp"] .store-btn,
+[data-button-style="sharp"] .store-btn--primary,
+[data-button-style="sharp"] .product-card__cart-btn,
+[data-button-style="sharp"] .store-block__cta,
+[data-button-style="sharp"] .store-block__discord-btn,
+[data-button-style="sharp"] .store-sidebar__category-btn,
+[data-button-style="sharp"] .store-sidebar__apply,
+[data-button-style="sharp"] .store-sidebar__reset,
+[data-button-style="sharp"] .store-dropdown__btn,
+[data-button-style="sharp"] .store-sidebar__trigger,
+[data-button-style="sharp"] .store-sidebar__drawer-trigger {
+  padding: 0.75rem 1.5rem !important;
+  background: var(--color-primary) !important;
+  color: white !important;
+  border-radius: 0 !important;
+  border: 3px solid var(--color-text) !important;
+  box-shadow: 4px 4px 0 var(--color-text) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+[data-button-style="sharp"] .store-btn--secondary {
+  background: var(--color-secondary) !important;
+}
+
+[data-button-style="sharp"] .store-btn:hover,
+[data-button-style="sharp"] .store-btn--primary:hover,
+[data-button-style="sharp"] .product-card__cart-btn:hover,
+[data-button-style="sharp"] .store-block__cta:hover,
+[data-button-style="sharp"] .store-block__discord-btn:hover,
+[data-button-style="sharp"] .store-sidebar__category-btn:hover,
+[data-button-style="sharp"] .store-sidebar__apply:hover,
+[data-button-style="sharp"] .store-sidebar__reset:hover,
+[data-button-style="sharp"] .store-dropdown__btn:hover,
+[data-button-style="sharp"] .store-sidebar__trigger:hover,
+[data-button-style="sharp"] .store-sidebar__drawer-trigger:hover {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0 var(--color-text) !important;
+}
+
+[data-button-style="sharp"] .store-btn:active,
+[data-button-style="sharp"] .store-btn--primary:active,
+[data-button-style="sharp"] .product-card__cart-btn:active,
+[data-button-style="sharp"] .store-block__cta:active,
+[data-button-style="sharp"] .store-block__discord-btn:active,
+[data-button-style="sharp"] .store-sidebar__category-btn:active,
+[data-button-style="sharp"] .store-sidebar__apply:active,
+[data-button-style="sharp"] .store-sidebar__reset:active,
+[data-button-style="sharp"] .store-dropdown__btn:active,
+[data-button-style="sharp"] .store-sidebar__trigger:active,
+[data-button-style="sharp"] .store-sidebar__drawer-trigger:active {
+  transform: translate(4px, 4px) !important;
+  box-shadow: 0 0 0 var(--color-text) !important;
+}

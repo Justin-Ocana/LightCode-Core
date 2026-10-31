@@ -1,0 +1,1 @@
+# Finances app - Manejo de contabilidad y transacciones financieras

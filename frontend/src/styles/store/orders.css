@@ -1,0 +1,443 @@
+/* ============================================
+   STORE ORDERS PAGE
+   Compatible con sistema de personalización
+   ============================================ */
+
+.store-orders {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header */
+.store-orders__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--color-border, #e5e7eb);
+}
+
+.store-orders__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text, #1f2937);
+  margin: 0;
+}
+
+.store-orders__subtitle {
+  margin-top: 0.5rem;
+  color: var(--color-text-secondary, #6b7280);
+  font-size: 1rem;
+}
+
+/* Filtros */
+.store-orders__filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.store-orders__search {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.store-orders__search svg {
+  position: absolute;
+  left: 1rem;
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.store-orders__search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 2px solid var(--color-border, #374151);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: var(--color-cards, #1f2937);
+  color: var(--color-text, #f9fafb);
+  transition: all 0.2s;
+}
+
+.store-orders__search-input:focus {
+  outline: none;
+  border-color: var(--color-primary, #3b82f6);
+  box-shadow: 0 0 0 3px var(--color-primary-light, rgba(59, 130, 246, 0.2));
+}
+
+.store-orders__filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.store-orders__filter-btn {
+  /* Los estilos base vienen de .store-btn */
+  /* Solo agregamos ajustes específicos si es necesario */
+}
+
+.store-orders__filter-btn.active {
+  /* El estado activo ya está manejado por store-btn--primary */
+}
+
+/* Lista de pedidos */
+.store-orders__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Tarjeta de pedido - Rediseñada más compacta */
+.store-order-card {
+  background: var(--color-cards);
+  border: 2px solid rgba(var(--color-primary-rgb), 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.store-order-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.3);
+  transform: translateY(-4px);
+}
+
+.store-order-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(var(--color-background-rgb), 0.5);
+  border-bottom: 1px solid rgba(var(--color-primary-rgb), 0.2);
+}
+
+.store-order-card__number {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.store-order-card__status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.store-order-card__status--success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.store-order-card__status--warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.store-order-card__status--error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.store-order-card__status--info {
+  background: rgba(var(--color-primary-rgb), 0.15);
+  color: var(--color-primary);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.25);
+}
+
+.store-order-card__status--muted {
+  background: rgba(156, 163, 175, 0.15);
+  color: rgba(var(--color-text-rgb), 0.6);
+  border: 1px solid rgba(156, 163, 175, 0.25);
+}
+
+.store-order-card__body {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  position: relative;
+}
+
+.store-order-card__image {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  border: 2px solid rgba(var(--color-primary-rgb), 0.2);
+}
+
+.store-order-card__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Nombre del producto - PROTAGONISTA */
+.store-order-card__product-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Metadatos en una línea compacta */
+.store-order-card__metadata {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: rgba(var(--color-text-rgb), 0.7);
+}
+
+.store-order-card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.store-order-card__meta-item svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.store-order-card__meta-item--price {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+.store-order-card__meta-item--delivery {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.store-order-card__meta-separator {
+  color: rgba(var(--color-primary-rgb), 0.3);
+  font-weight: 700;
+}
+
+/* Badge de entrega */
+.store-order-card__delivery-badge {
+  display: inline-flex;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-success, #10b981);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Flecha de navegación */
+.store-order-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(var(--color-primary-rgb), 0.15);
+  color: var(--color-primary);
+  border-radius: 10px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.store-order-card:hover .store-order-card__arrow {
+  background: var(--color-primary);
+  color: rgb(0, 0, 0);
+  transform: translateX(4px);
+}
+
+/* Estado vacío */
+.store-orders__empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.store-orders__empty svg {
+  color: var(--color-text-secondary, #9ca3af);
+  margin-bottom: 1.5rem;
+}
+
+.store-orders__empty h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text, #1f2937);
+  margin-bottom: 0.5rem;
+}
+
+.store-orders__empty p {
+  color: var(--color-text-secondary, #6b7280);
+  margin-bottom: 2rem;
+}
+
+/* Ayuda */
+.store-orders__help {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--color-cards, #1f2937);
+  border: 2px solid var(--color-border, #374151);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.store-orders__help h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text, #f9fafb);
+  margin-bottom: 0.5rem;
+}
+
+.store-orders__help p {
+  color: var(--color-text-secondary, #9ca3af);
+  margin-bottom: 1.5rem;
+}
+
+/* Email Prompt */
+.store-orders__email-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  padding: 2rem;
+}
+
+.store-orders__email-prompt-content {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  background: var(--color-cards, white);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  border: 2px solid var(--color-border, #e5e7eb);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.store-orders__email-prompt-content svg {
+  color: var(--color-primary, #3b82f6);
+  margin-bottom: 1.5rem;
+}
+
+.store-orders__email-prompt-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text, #1f2937);
+  margin-bottom: 0.75rem;
+}
+
+.store-orders__email-prompt-content p {
+  color: var(--color-text-secondary, #6b7280);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.store-orders__email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.store-orders__email-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--color-border, #374151);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: var(--color-background-secondary, #111827);
+  color: var(--color-text, #f9fafb);
+  transition: all 0.2s;
+}
+
+.store-orders__email-input:focus {
+  outline: none;
+  border-color: var(--color-primary, #3b82f6);
+  box-shadow: 0 0 0 3px var(--color-primary-light, rgba(59, 130, 246, 0.2));
+}
+
+.store-orders__email-input::placeholder {
+  color: var(--color-text-tertiary, #9ca3af);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .store-orders {
+    padding: 1rem;
+  }
+
+  .store-orders__title {
+    font-size: 1.5rem;
+  }
+
+  .store-orders__filters {
+    flex-direction: column;
+  }
+
+  .store-orders__search {
+    min-width: 100%;
+  }
+
+  .store-orders__filter-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .store-orders__filter-btn {
+    flex: 1;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .store-order-card__body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .store-order-card__image {
+    width: 100%;
+    height: 160px;
+  }
+
+  .store-order-card__metadata {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .store-order-card__meta-separator {
+    display: none;
+  }
+
+  .store-order-card__arrow {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+  }
+}

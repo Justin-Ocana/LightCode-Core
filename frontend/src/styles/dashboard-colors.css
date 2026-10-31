@@ -1,0 +1,223 @@
+/**
+ * ============================================
+ * 🎨 SISTEMA DE DISEÑO PROFESIONAL
+ * ============================================
+ * 
+ * Esquema de colores basado en la regla 70-20-10:
+ * 
+ * 🌑 70% - Fondo oscuro azulado (#0B1220)
+ * 📊 20% - Grises para estructura y texto
+ * 🎯 10% - Color para acciones y métricas
+ * 
+ * 🎨 PALETA:
+ * --primary: Azul moderno (#3B82F6) - Acciones principales
+ * --secondary: Cyan suave (#22D3EE) - Highlights sutiles
+ * --accent: Verde esmeralda (#10B981) - Éxito
+ * 
+ * 🌑 FONDOS:
+ * Negro azulado (#0B1220) con superficies en tonos azulados
+ * 
+ * 📝 TEXTOS:
+ * Jerarquía clara de grises (#E5E7EB → #374151)
+ * 
+ * ⚠️ REGLA CLAVE:
+ * Usa color solo para acciones importantes y métricas.
+ * El resto debe ser estructura en grises sobre fondo azulado.
+ */
+
+:root {
+  /* ============================================
+     🎨 COLORES PRINCIPALES - Sistema Elegante
+     ============================================ */
+  
+  /* Color primario - Azul eléctrico profesional */
+  --primary: #3B82F6;
+  --primary-hover: #60A5FA;
+  --primary-active: #2563EB;
+  --primary-light: rgba(59, 130, 246, 0.12);
+  --primary-alpha: rgba(59, 130, 246, 0.1);
+  
+  /* Color secundario - Púrpura elegante */
+  --secondary: #8B5CF6;
+  --secondary-hover: #A78BFA;
+  --secondary-light: rgba(139, 92, 246, 0.12);
+  
+  /* Color de acento - Verde esmeralda */
+  --accent: #10B981;
+  --accent-hover: #34D399;
+  --accent-light: rgba(16, 185, 129, 0.12);
+  
+  /* ============================================
+     🌑 FONDOS - Negro Premium
+     ============================================ */
+  
+  /* Fondo principal - Negro profundo */
+  --bg-dark: #000000;
+  --bg-darker: #050505;
+  
+  /* Superficies elevadas - Escala de negros */
+  --bg-card: #0A0A0A;
+  --surface-1: #0D0D0D;
+  --surface-2: #101010;
+  --surface-3: #141414;
+  
+  /* Estados hover */
+  --bg-hover: rgba(255, 255, 255, 0.03);
+  
+  /* ============================================
+     📝 TEXTOS - Jerarquía Clara
+     ============================================ */
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #8B8B8B;
+  --text-tertiary: #5A5A5A;
+  --text-muted: #3D3D3D;
+  --text-disabled: #2A2A2A;
+  
+  /* ============================================
+     🔲 BORDES - Sutiles y Elegantes
+     ============================================ */
+  
+  --border: rgba(255, 255, 255, 0.05);
+  --border-light: rgba(255, 255, 255, 0.02);
+  --border-hover: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(255, 255, 255, 0.05);
+  
+  /* ============================================
+     ✅ ESTADOS SEMÁNTICOS
+     ============================================ */
+  
+  --success: #10B981;
+  --success-light: rgba(16, 185, 129, 0.12);
+  --success-alpha: rgba(16, 185, 129, 0.1);
+  
+  --error: #EF4444;
+  --error-light: rgba(239, 68, 68, 0.12);
+  --error-alpha: rgba(239, 68, 68, 0.1);
+  
+  --danger: #EF4444;
+  --danger-alpha: rgba(239, 68, 68, 0.1);
+  
+  --warning: #F59E0B;
+  --warning-light: rgba(245, 158, 11, 0.12);
+  --warning-alpha: rgba(245, 158, 11, 0.1);
+  
+  --info: #3B82F6;
+  --info-light: rgba(59, 130, 246, 0.12);
+  --info-alpha: rgba(59, 130, 246, 0.1);
+  
+  --destructive: #DC2626;
+  --destructive-hover: #B91C1C;
+  
+  /* ============================================
+     📏 ESPACIADO Y GEOMETRÍA
+     ============================================ */
+  
+  --space-1: 0.25rem;
+  --space-1-5: 0.375rem;
+  --space-2: 0.5rem;
+  --space-2-5: 0.625rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+  
+  /* ============================================
+     🔤 TIPOGRAFÍA
+     ============================================ */
+  
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  
+  /* ============================================
+     🎭 SOMBRAS
+     ============================================ */
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-glow-primary: 0 0 20px rgba(59, 130, 246, 0.2);
+  --shadow-glow-accent: 0 0 20px rgba(16, 185, 129, 0.2);
+  
+  /* ============================================
+     ⚡ TRANSICIONES
+     ============================================ */
+  
+  --transition-fast: 0.12s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+}
+
+
+/* ============================================
+   ESQUEMAS DE COLOR ALTERNATIVOS
+   ============================================
+   
+   Descomentá uno de estos bloques para cambiar el esquema:
+*/
+
+/* 🟣 ESQUEMA PÚRPURA PREMIUM */
+/*
+:root {
+  --primary: #8B5CF6;
+  --primary-hover: #A78BFA;
+  --secondary: #EC4899;
+  --accent: #10B981;
+}
+*/
+
+/* 🟢 ESQUEMA VERDE ESMERALDA */
+/*
+:root {
+  --primary: #10B981;
+  --primary-hover: #34D399;
+  --secondary: #14B8A6;
+  --accent: #3B82F6;
+}
+*/
+
+/* 🔴 ESQUEMA ROJO INTENSO */
+/*
+:root {
+  --primary: #EF4444;
+  --primary-hover: #F87171;
+  --secondary: #F59E0B;
+  --accent: #8B5CF6;
+}
+*/
+
+/* 🔵 ESQUEMA CIAN TECNOLÓGICO */
+/*
+:root {
+  --primary: #06B6D4;
+  --primary-hover: #22D3EE;
+  --secondary: #3B82F6;
+  --accent: #10B981;
+}
+*/
+
+/* 🟠 ESQUEMA NARANJA VIBRANTE */
+/*
+:root {
+  --primary: #F97316;
+  --primary-hover: #FB923C;
+  --secondary: #EAB308;
+  --accent: #8B5CF6;
+}
+*/
+

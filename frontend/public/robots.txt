@@ -1,0 +1,26 @@
+# Store Platform - Robots.txt
+# https://www.example.com/robots.txt
+
+User-agent: *
+Allow: /
+Allow: /favicon.png
+Allow: /favicon.svg
+Allow: /favicon.ico
+Allow: /login
+Allow: /register
+Allow: /store/*
+
+# Disallow admin and dashboard (require auth)
+Disallow: /dashboard/
+Disallow: /kv-admin/
+Disallow: /api/
+
+# Disallow auth endpoints
+Disallow: /verify-email
+Disallow: /select-subscription
+
+# Sitemap
+Sitemap: https://www.example.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

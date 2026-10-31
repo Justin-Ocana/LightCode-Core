@@ -1,0 +1,83 @@
+/* ============================================
+   MAIN APPLICATION STYLES
+   ============================================ */
+
+/* Import Universal CSS System */
+@import './styles/main.css';
+
+/* Import Dashboard Colors (Dark Theme for Admin) */
+@import './styles/dashboard-colors.css';
+
+/* Note: Dashboard dark theme is applied via dashboard-colors.css for admin pages only */
+
+/* Global Scrollbar - Dark theme */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile - scrollbar más visible */
+@media (max-width: 768px) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(136, 136, 170, 0.6) transparent;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 170, 0.6);
+  }
+}
+
+/* Spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Alert slide-in animation */
+@keyframes alert-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

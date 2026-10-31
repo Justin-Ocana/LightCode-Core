@@ -1,0 +1,21 @@
+{
+  "name": "Store Platform",
+  "short_name": "Store",
+  "description": "Complete e-commerce platform for managing your online store",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090F",
+  "theme_color": "#7C3AED",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/loader.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "es",
+  "dir": "ltr"
+}
